@@ -19,6 +19,8 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+    networks:
+      - spotstream_network
     volumes:
       - ./kraft-data:/tmp/kraft-combined-logs
     healthcheck:
@@ -44,6 +46,20 @@ services:
     volumes:
       - ./spotify-producer:/app  # For code reloading in development
 
+  spark_processor:
+    build: ./spark_streaming  # Path to directory with Dockerfile and script
+    container_name: spark_processor
+    depends_on:
+      - kafka
+    environment:
+      SPARK_MASTER_URL: local[*]
+    networks:
+      - spotstream_network
+    volumes:
+      - ./spark_streaming:/app
+
 networks:
-  default:
+  spotstream_network:
     name: spotstream_network
+    driver: bridge
+  

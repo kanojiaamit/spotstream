@@ -1,1 +1,14 @@
 .env
+
+## Python
+.vscode
+__pycache__
+.idea
+.pytest_cache
+*.pyc
+*.sqlite
+.coverage
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
