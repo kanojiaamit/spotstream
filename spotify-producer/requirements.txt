@@ -1,3 +1,4 @@
 spotipy>=2.25.0
 python-dotenv>=1.0.0
 kafka-python>=2.0.2
+apache-airflow-providers-docker==3.8.0
