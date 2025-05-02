@@ -61,4 +61,4 @@ if __name__ == '__main__':
     TRACK_TO_SEARCH = 'Bohemian Rhapsody'
     while True:
         fetch_and_produce_track(TRACK_TO_SEARCH)
-        time.sleep(30)  # Wait 30 seconds before next search/produce
+        time.sleep(15)  # Wait 15 seconds before next search/produce
