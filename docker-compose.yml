@@ -1,4 +1,3 @@
-#version: '3'
 
 services:
   kafka:
@@ -58,7 +57,7 @@ services:
     networks:
       - spotstream_network
     volumes:
-      - ./spotify-producer:/app  # For code reloading in development
+      - ./spotify-producer:/app 
 
   spark_processor:
     build:
