@@ -1,12 +1,19 @@
 .env
 spotstream-env/
 airflow/logs/
+airflow/airflow.db
+
+# Docker/Kafka/Cassandra/Postgres data
+kafka_data/
+kraft-data/
+cassandra-data/
+postgres-data/
 
 ## Python
 .vscode
 __pycache__
-.idea
-.pytest_cache
+.idea/
+.pytest_cache/
 *.pyc
 *.sqlite
 .coverage
@@ -18,4 +25,7 @@ pip-delete-this-directory.txt
 *.log
 *.tmp
 .cache/
-.cache
+
+# OS-specific
+.DS_Store
+Thumbs.db
